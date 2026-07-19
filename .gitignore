@@ -1,0 +1,28 @@
+# PDB structure cache (auto-downloaded from RCSB)
+data/cache/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE files
+.idea/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.spl
+*.synctex.gz
+*Notes.bib
+
+# OS files
+.DS_Store
+Thumbs.db
+
+src/ml/training_results.pkl
+src/ml/best_mlp.pt
+src/ml/training_log.txt

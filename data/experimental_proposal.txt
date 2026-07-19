@@ -1,0 +1,57 @@
+"""
+experimental_proposal.txt — Testable predictions of voltage-gated Trp switching
+================================================================================
+
+PREDICTION 1: Voltage-dependent Trp fluorescence in NaV1.4
+----------------------------------------------------------
+If the model is correct, the Trp fluorescence spectrum or lifetime of
+NaV1.4 should change measurably as the membrane potential is stepped
+from -80 mV to +50 mV.
+
+Experiment:
+1. Express human NaV1.4 (with beta1 subunit) in HEK293T cells
+2. Patch-clamp in whole-cell configuration to control membrane potential
+3. Excite Trp with 280 nm pulsed laser (<50 fs, <1 uJ/cm^2 to avoid damage)
+4. Collect Trp emission at 327 nm with streak camera (<200 fs resolution)
+5. Step V_m from -80 mV to +50 mV in 10 mV increments
+6. Measure fluorescence intensity and lifetime at each voltage
+
+Predicted signature:
+- At -70 mV: Trp-57 dominates → fluorescence lifetime ~X ns, emission peak at 327 nm
+- At +40 mV: Trp-156 dominates → fluorescence lifetime ~Y ns (different local environment)
+- The fluorescence change should follow a Boltzmann sigmoid centered near -20 mV
+  (midpoint of the occupation switch curve)
+
+Control:
+- Mutate Trp-57 to Phe: should eliminate the voltage-dependent fluorescence shift
+- Mutate Trp-156 to Phe: should eliminate the shifted component
+- Use tetrodotoxin (TTX) to block ion current without affecting field
+
+PREDICTION 2: Voltage-gated FRET between Trp and a bound probe
+---------------------------------------------------------------
+If the exciton moves between Trp residues with voltage, then FRET from
+a donor Trp to a nearby acceptor fluorophore should also be voltage-dependent.
+
+Experiment:
+1. Label NaV1.4 at a specific extracellular site with a fluorescent acceptor
+   (e.g., Alexa-350 whose absorption overlaps Trp emission at 327 nm)
+2. Measure Trp-to-Alexa FRET efficiency as a function of V_m
+3. The FRET efficiency should change as the exciton population shifts
+   between Trp residues at different distances from the label
+
+PREDICTION 3: Anesthetic disruption of voltage-gated switching
+--------------------------------------------------------------
+General anesthetics (propofol, isoflurane) bind to hydrophobic pockets
+in ion channels adjacent to Trp networks.
+
+Experiment:
+1. Repeat Prediction 1 with 10 uM propofol
+2. Propofol binding should alter the local dielectric environment
+   around specific Trp residues, changing their site energies
+3. Predicted: the voltage midpoint of the fluorescence switch shifts
+   or the switch amplitude diminishes
+
+If all three predictions hold, voltage-gated Trp exciton routing is
+real — and every action potential in every neuron is accompanied by
+a wavefront of exciton population shifting through the protein's Trp
+network, potentially gating ion channels at sub-picosecond timing.
